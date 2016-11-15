@@ -5,9 +5,7 @@
 	<title>Документация к админке</title>
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-	<!-- Optional theme -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-	<!-- Latest compiled and minified JavaScript -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </head>
 <style>
@@ -22,9 +20,9 @@ body, html {
 </style>
 <body>
 
-<header id="top">
-	
-</header>
+<!-- <header id="top">
+	<a href="http://benzodom.com.ua/admin">&rarr;&nbsp;Вход в админку</a>
+</header> -->
 
 <section class="index-list col-md-3">
 	<ol><li><a href="#userinfo" class="internalLink"><b>Руководство Пользователя</b></a>
@@ -39,7 +37,10 @@ body, html {
 		</ul>
 		<!-- <li><a href="http://forum.Магазин-russia.ru/threads/vitrina.403/" class="internalLink">Витрина</a></li> -->
 		<!-- <li><a href="http://forum.Магазин-russia.ru/threads/panel-administratora.410/" class="internalLink">Панель Администратора</a></li> -->
-		<li><a href="#product" class="internalLink">1.2 Добавление товара</a></li>
+		<li><a href="#product" class="internalLink">1.2 Добавление товара</a><ul>
+			<li><a href="#data-delivery">Добавление блока «бесплатная доставка» и тд.</a></li>
+			<li><a href="#data-video">Добавление видео</a></li>
+		</ul></li>
 		<li><a href="#category" class="internalLink">1.3 Создание категорий</a></li>
 		<li><a href="#attr" class="internalLink">1.4 Атрибуты и группы атрибутов</a></li>
 		<li><a href="#option" class="internalLink">1.5 Создание опций</a></li>
@@ -79,6 +80,9 @@ body, html {
 </ol>
 </section>
 <section class="user content col-md-9 pull-right" id="top">
+	<header id="top">
+		<a href="http://benzodom.com.ua/admin">&rarr;&nbsp;Вход в админку</a>
+	</header>
 	<article id="userinfo">
 	<h1>Руководство Пользователя</h1>
 	<h2 id="start">Начало работы</h2>
@@ -220,7 +224,19 @@ body, html {
 	<b>Акция </b>- тут можно создать для товара акционную стоимость.<br>
 	<b>Изображения </b>- здесь можно добавить для товара дополнительные изображения.<br>
 	<b>Бонусы </b>- на данной вкладке задается стоимость товара в бонусных баллах, а так же количесво баллов которые будут начислены покупателю при покупки товара.<br>
-	<b>Дизайн </b>- на дангой вкладке можно задать макет для товара. В 99% случаев оставляют не заполненным.</p></article>
+	<b>Дизайн </b>- на дангой вкладке можно задать макет для товара. В 99% случаев оставляют не заполненным.</p>
+	<h3 id="data-delivery">Добавление блоков «бесплатная доставка» и тд.</h3>
+	<p>Нажать на голую кнопку справа поля <b>Модель</b> на вкладке <b>Данные</b></p>
+	<img src="img/product-data-collapse.png" alt="" width="780"><br>
+	<p>Откроется панель со скрытыми полями:</p>
+	<img src="img/product-data-collapse-in.png" alt="" width="780"><br>
+	<p>Отметить галочками необходимые поля.</p>
+	<h3 id="data-video">Добавление видео</h3>
+	<p>Поле для добавления видеоролика аходится на скрытой панели вкладки <b>Данные</b> (см.выше)</p>
+	<p>Ссылку на видео вставлять в поле <b>Видео</b></p>
+	<p>Ссылку копировать на странице видеоролика сайта youtube.com во вкладке <b>Поделиться</b> (под видео)</p>
+	<img src="img/youtube-link.png" alt="" width="780"><br>
+	</article>
 	<article id="category"><h2>Создание категорий</h2>
 	<p>Для создании категории или подкатегории необходимо выполнить следующие действия.<br>
 	<b>1</b>. Перейти в <b>Меню - Каталог - Категории</b> -  и нажать <b>Добавить</b></p>
