@@ -60,6 +60,7 @@ body, html {
 		<li><a href="http://forum.Магазин-russia.ru/threads/partnerskaja-programma.254/" class="internalLink">Партнерская программа</a></li>
 		<li><a href="http://forum.Магазин-russia.ru/threads/polzovateli-i-gruppy-polzovatelej.350/" class="internalLink">Пользователи и группы пользователей</a></li>-->
 		<li><a href="#ability" class="internalLink">1.12 Состояние на складе, статус заказа</a></li>
+		<li><a href="#pricelist" class="internalLink">1.13 Заливка прайсов</a></li>
 		<!--<li><a href="http://forum.Магазин-russia.ru/threads/rassylka-informacii-klientam.279/" class="internalLink">Рассылка информации клиентам</a></li>
 		<li><a href="http://forum.Магазин-russia.ru/threads/dobavlenie-dopolnitelnogo-jazyka.17/" class="internalLink">Добавление дополнительного языка</a></li>
 		<li><a href="http://forum.Магазин-russia.ru/threads/dobavleniju-dopolnitelnoj-valjuty.18/" class="internalLink">Добавление дополнительной валюты</a></li>
@@ -347,13 +348,26 @@ body, html {
 	<b>PayPal Pro</b> - метод оплаты картами Visa и MasterCard в процессинге PayPal<br>
 	<b>PayPal Payments Standard</b> - метод оплаты картами Visa и MasterCard в процессинге PayPal</p></article>
 	<article id="ability"><h2>Состояние на складе, статус заказа​</h2>
-	<b>Состояние на складе</b><br>
 	<b>Состояний на складе</b> - это статус для товара, который применяется при его отсутствии на складе. Какой именно статус будет применяться к товару, вы можете самостоятельно выбрать на вкладке <b>редактирования товара</b>, поле <b>Отсутствие на складе</b>.<br>
 	Для того чтобы добавить новое состояние склада, вам необходимо перейти в <b>Меню - Система - Локализация - Состояние на складе</b> и нажать <b>Добавить</b>. Далее ввести название состояния и нажать сохранить.</p>
 	<p><b>Статус заказа</b><br>
 	После того ка клиент оформил заказ, ему присваивается статус <b>Ожидание</b>. Можно выбрать и другой статус по умолчанию, для этого необходимо перейти в <b>Меню - Система - Настройки</b> и на вкладке <b>Опции</b> выбрать для поля <b>Статус заказа</b> нужный статус.<br>
 	При оформлении заказа с использование модулей оплаты, данный статус в настройках модуля тоже можно выбрать.<br>
 	Для добавления новых статусов заказа, необходимо его добавить в <b>Меню - Система - Локализация - Статус заказа</b></article>
+	<article id="pricelist"><h1>Обновление остатков и цен из прайс-листа</h1>
+		<h2>Excel</h2>
+		<p>Открыть прайс в excel. Удалить все колонки кроме колонок <b>Артикул, Цена, Наличие.</b></p>
+		<p>Переименовать колонки соответственно: <b>sku, price, quantity</b>.</p>
+		<img src="img/excelfile.png" alt="">
+		<p>В меню <b>Файл</b> выбрать <b>Экспортировать</b> в окне выбора опций указать формат <b>CSV</b>!!!</p>
+		<h2>CSV</h2>
+		<p>Перейти на сайт онлайн-конвертера <a href="http://www.convertcsv.com/csv-to-sql.htm">Use this tool to convert CSV to SQL statements.</a></p>
+		<p>Добавить файл прайса в формате .csv. Остальные поля проверить/заполнить в соответствии с изображениями ниже.</p>
+		<img src="img/selectinput.png" alt="">
+		<img src="img/inputoption.png" alt="">
+		<img src="img/columnoption.png" alt="">
+		<img src="img/generateoutput.png" alt="">
+	</article>
 	<!-- <article id=""></article> -->
 	<b><a href="#top">&uarr;&nbsp;назад к Содержанию</a></b></article>
 </section>
@@ -387,6 +401,101 @@ body, html {
 	- На вкладке Лог, посмотреть наличие ошибок. Если есть, то необходимо их исправить.</p>
 	<p>11. Другие корректировки, которые могут потребоваться, в зависимости от того, на какую версию вы переходите от и до.<br>
 	О таких корректировках будет написано в теме соответствующего релиза.</p></article>
+	<article><h2>Структура шаблонов Opencart</h2>
+	<p><i>В шаблоне Opencart достаточно легко разобраться, но трудоемко править - иногда необходимо вносить изменения в 3-4-5 файлов. </i><br>
+	<p><i>Что бы не запутаться, где какие файлы, вот - их расположения (и описание):</i><br>
+	 <br>
+	<p>Папка <b>common/ </b><br>
+	 <br>
+	<p><b>home.tpl</b> - вывод главной страницы<br>
+	<p><b>column_left.tpl</b> - левая колонка магазина<br>
+	<p><b>column_right.tpl</b> - правая колонка магазина<br>
+	<p><b>content_bottom.tpl</b> - нижняя часть магазина (только в 1.5.х)<br>
+	<p><b>content_top.tpl </b>- верхняя часть магазина (только в 1.5.х)<br>
+	<p><b>footer.tpl</b> - нижняя часть шаблона<br>
+	<p><b>header.tpl</b> - верхняя часть шаблона<br>
+	<p><b>cart.tpl</b> - всплывающее окно корзины <i>(в верху сайта) </i>(только в 1.5.х)<br>
+	<p><b>maintenance.tpl</b> - шаблон выводится, когда магазин закрыт<br>
+	<p><b>success.tpl</b> - выводится после успешной регистрации в магазине и после успешного оформления заказа <i>(guest mode)</i><br>
+	 <br>
+	<p>Папка <b>product/ </b><br>
+	 <br>
+	<p><b>category.tpl</b> - вывод группы товаров<br>
+	<p><b>manufacturer.tpl</b> - вывод товаров по производителю <i>(в 1.5.х не используется)</i><br>
+	<p><b>manufacturer_info.tpl</b> - вывод товаров по производителю (только в 1.5.х)<br>
+	<p><b>manufacturer_list.tpl</b> - страница со списком всех производителей (только в 1.5.х)<br>
+	<p><b>product.tpl</b> - вывод одного товара<br>
+	<p><b>review.tpl</b> - вывод отзыва о товаре в шаблоне product.tpl<br>
+	<p><b>search.tpl</b> - поиск и результаты поиска<br>
+	<p><b>special.tpl</b> - выбор специальных предложений <i>(Special Offers)</i><br>
+	<p><b>compare.tpl</b> - страница сравнения товаров (только в 1.5.х)<br>
+	 <br>
+	<p>Папка <b>information/ </b><br>
+	 <br>
+	<p><b>contact.tpl</b> - вывод адреса магазина и формы отправки сообщений<br>
+	<p><b>information.tpl</b> - вывод информационной статьи<br>
+	<p><b>sitemap.tpl</b> - карта сайта<br>
+	 <br>
+	<p>Папка <b>error/ </b><br>
+	 <br>
+	<p><b>not_found.tpl</b> - страница с ошибкой "error 404"<i>(...not found!)</i><br>
+	 <br>
+	<p>Папка <b>account/ </b><br>
+	 <br>
+	<p><b>account.tpl</b> - форма регистрации или входа в аккуант<br>
+	<p><b>address.tpl</b> - Страница выбора/редактирования адреса оплаты/доставки <i>(в 1.5.х не используется)</i><br>
+	<p><b>addresses.tpl </b>- Адресная книга в настройках аккаунта <i>(в 1.5.х не используется)</i><br>
+	<p><b>address_form.tpl</b> - страница редактирование адреса в аккаунте (только в 1.5.х)<br>
+	<p><b>address_list.tpl</b> - Адресная книга в настройках аккаунта (только в 1.5.х)<br>
+	<p><b>create.tpl</b> - форма регистрации в магазине <i>(в 1.5.х не используется)</i><br>
+	<p><b>register.tpl</b> - форма регистрации в магазине (только в 1.5.х)<br>
+	<p><b>return_form</b> - страница создания возврата товара (только в 1.5.х)<br>
+	<p><b>return_list.tpl</b> - страница истории о возвратах товара (только в 1.5.х)<br>
+	<p><b>return_info.tpl</b> - подробная информация о возврате товара <i>(из return_list.tpl) </i>(только в 1.5.х)<br>
+	<p><b>reward.tpl</b> - информация о зачисленных бонусных баллах за покупки (только в 1.5.х)<br>
+	<p><b>transaction.tpl</b> - страница истории платежей (только в 1.5.х)<br>
+	<p><b>wishlist.tpl </b>- страница "Взято на заметку" (только в 1.5.х)<br>
+	<p><b>download.tpl</b> - страница со скачиваемыми товарами<br>
+	<p><b>edit.tpl </b>- редактировать профиль<br>
+	<p><b>forgotten.tpl</b> - напоминание пароля<br>
+	<p><b>history.tpl</b> - история заказов<br>
+	<p><b>invoice.tpl</b> - счет-фактура<br>
+	<p><b>login.tpl </b>- форма логина или регистрации на сайте<br>
+	<p><b>newsletter.tpl </b>- подписка на новости<br>
+	<p><b>password.tpl</b> - смена пароля<br>
+	 <br>
+	<p>Папка <b>checkout/</b><br>
+	 <br>
+	<p><b>address.tpl </b><br>
+	<p><b>cart.tpl </b>- вывод содержимого корзины (в центре страницы)<br>
+	<p><b>confirm.tpl</b> - последний шаг заказа, подтверждение перед отправкой, этот же шаблон используется для <b>guest_step_3</b>. Нижние ссылки <i>( назад и подтвердить заказ)</i> беруться из шаблона метода оплаты, к примеру из payment/<b>cod.tpl </b><br>
+	<p><b>guest_step_1.tpl</b>- 1 шаг заказа без регистрации<br>
+	<p><b>guest_step_2.tpl</b>- 2 шаг заказа без регистрации<br>
+	<p><b>payment.tpl</b>- оплата<br>
+	<p><b>shipping.tpl</b>- доставка<br>
+	 <br>
+	<p>Папка <b>mail/ </b><br>
+	 <br>
+	<p><b>order_confirm.tpl</b> - письмо о подтверждении<br>
+	 <br>
+	<p>Папка <b>modules/</b><br>
+	 <br>
+	<p><b>bestseller.tpl </b>- самые покупаемые товары<br>
+	<p><b>bestseller_home.tpl </b>- самые покупаемые товары на главной странице<br>
+	<p><b>cart.tpl </b>- вывод корзины в колонке<br>
+	<p><b>category.tpl </b>- блок Категории<br>
+	<p><b>featured.tpl</b> - "рекомендуемые товары"<br>
+	<p><b>featured_home.tpl</b> - "рекомендуемые товары" на главной странице<br>
+	<p><b>google_talk.tpl</b><br>
+	<p><b>information.tpl</b> - список статей на сайте, ссылки на сайтмап и контакты<br>
+	<p><b>latest.tpl </b>- "последние товары"<br>
+	<p><b>latest_home.tpl </b>- "последние товары" на главной странице<br>
+	<p><b>manufacturer.tpl </b>- выпадающий список производителей<br>
+	<p><b>special.tpl </b>- специальное предложение<br>
+	<p><b>special_home.tpl</b>- специальное предложение на главной странице</article>
+
+	<h2>Запрос SQL на обновление товара</h2>
+	<blockquote><p><b>UPDATE `product` SET `quantity`=N,`stock_status_id`=[7/8/5/6],`price`=N.NNNN,`subtract`=1?,`status`=1? WHERE `sku`=ARTICUL</b></p></blockquote>
 </section>
 </body>
 </html>
