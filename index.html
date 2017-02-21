@@ -77,6 +77,12 @@ body, html {
 			<li><a href="#update" class="internalLink">2.2 Обновление</a></li>
 			<!-- <li><a href="#" class="internalLink">2.2 </a></li> -->
 		</ul>
+		<ul><a href="#admininfo" class="internalLink"><b>Доработка Админки</b></a>
+			<li><a href="adm1"></a></li>
+			<li><a href="adm2"></a></li>
+			<li><a href="adm3">Категория в списке товаров в Админке</a></li>
+			<li><a href="adm4"></a></li>
+		</ul>
 	</li>
 </ol>
 </section>
@@ -401,7 +407,7 @@ body, html {
 	- На вкладке Лог, посмотреть наличие ошибок. Если есть, то необходимо их исправить.</p>
 	<p>11. Другие корректировки, которые могут потребоваться, в зависимости от того, на какую версию вы переходите от и до.<br>
 	О таких корректировках будет написано в теме соответствующего релиза.</p></article>
-	<article><h2>Структура шаблонов Opencart</h2>
+	<article id="structure"><h2>Структура шаблонов Opencart</h2>
 	<p><i>В шаблоне Opencart достаточно легко разобраться, но трудоемко править - иногда необходимо вносить изменения в 3-4-5 файлов. </i><br>
 	<p><i>Что бы не запутаться, где какие файлы, вот - их расположения (и описание):</i><br>
 	 <br>
@@ -493,8 +499,118 @@ body, html {
 	<p><b>manufacturer.tpl </b>- выпадающий список производителей<br>
 	<p><b>special.tpl </b>- специальное предложение<br>
 	<p><b>special_home.tpl</b>- специальное предложение на главной странице</article>
+	<article id="adm2"><h2>Проектирование Title, H1, Мета-тега Description</h2>
+	<p>Проектирование для интернет-магазина детского трикотажа на Opencart (там уже всё интегрировано, как пример для вас). Проект шаблонирования под этот сайт:</p>
+	<p><b>Шаблоны title</b></p>
+	<p>Категории (Подкатегории): «Купить *Название категории* оптом и в розницу от производителя в Украине».</p>
+	<p>Товары: «Купить *Название товара* оптом и в розницу – София Текстиль».</p>
+	<p><b>Шаблоны description</b></p>
+	<p>Категории (Подкатегории): «София Текстиль предлагает купить фирменный *Название категории* оптом и в розницу в Украине. Качественный трикотаж. Недорого. Всегда скидки и акции. +38 (098) 70-11-853».</p>
+	<p>Товары: «*Название товара* от София Текстиль – Опт и розница. Качество. Низкая цена. Скидки и акции. +38 (098) 70-11-853».</p>
+	<p><b>Шаблоны H1:</b></p>
+	<p>Категории (Подкатегории): «Купить *Название категории* в Украине»
+	Для товаров не нужно менять.</p>
+	<hr>
+	<p>Заходим в папку сайт.ру/catalog/controller/product/</p>
+	<p>Категории (Подкатегории): Открываем файл category.php</p>
+	<p>Нахожу в поиске «setTitle». <br>
+	Согласно шаблона меняю всю строку на:</p>
+	<p>$this->document->setTitle('Купить '.$category_info['name'].' оптом и в розницу от производителя в Украине');</p>
+	<p>Строкой ниже находиться «setDescription». <br>
+		Меняю всю строку на:</p>
+	<p>$this->document->setDescription('София Текстиль предлагает купить фирменный '.$category_info['name'].' оптом и в розницу в Украине. Качественный трикотаж. Недорого. Всегда скидки и акции. +38 (098) 70-11-853');</p>
+	<p>Несколькими строками ниже находиться data[‘heading_title’]. Меняю всю строку на:</p>
+	<p>$this->data['heading_title'] = 'Купить '.$category_info['name'].' в Украине';</p>
+	<p>Товары: Открываем файл product.php. <br>
+		По аналогии придерживаясь шаблона:</p>
+	<p>Нашли setTitle и setDescription, поменяли полностью 2 строки на:</p>
+	<p>$this->document->setTitle('Купить '.$product_info['name'].' оптом и в розницу – София Текстиль');<br>
+	$this->document->setDescription($product_info['name'].' от София Текстиль – Опт и розница. Качество. Низкая цена. Скидки и акции. +38 (098) 70-11-853');</p>
+	<p>Ниже, там где и в прошлый раз heading_title, поменяли на (там уже такой, какой мне нужен, но вы можете с помощью конкатенации присоединить по аналогии примера «Категории» нужные слова с обеих сторон переменной):</p>
+	<p>$this->data['heading_title'] = $product_info['name'];</p>
+	<p>Теперь просто замените мой текст шаблона на свой и дерзайте!</p>
+	<blockquote><p>$this->document->setTitle($product_info['meta_title']);<br>
+	$this->document->setDescription($product_info['meta_description']);<br>
+	$this->document->setKeywords($product_info['meta_keyword']);<br>
+	$data['heading_title'] = $product_info['name'];</p>
+	<b>Пример отредактированных строк:</b>
+	<p>$this->document->setTitle('Купить '.$product_info['name'].' в Украине - Кофе из Италии');<br>
+	$this->document->setDescription('Кофе Моккачино предлагает купить '.$product_info['name'].' оптом и в розницу в Украине из Италии. Качественный европейский кофе. Недорого. Всегда скидки и акции. +38 (098) 70-11-853']);<br>
+	$this->document->setKeywords('купить, '.$product_info['name'].', украина, недорого, дешево, из италии, оригинал, опт, оптом');<br>
+	$data['heading_title'] = 'Купить '.$product_info['name'];</p></blockquote></article>
 
+	<h1 id="admininfo">Доработка Админки</h1>
+	<article id="adm1"><h2></h2>
+		
+	</article>
+	<article id="adm2"><h2></h2>
+		
+	</article>
+	<article id="adm3"><h2>Категория в списке товаров в Админке</h2>
+	<p>В файле <b>\admin\controller\catalog\product.php</b><br><br>
+	находим:</p>
+	<div class="well"><div class="code"><code><span style="color: #000000"><span style="color: #0000BB">$data</span><span style="color: #007700">[</span><span style="color: #DD0000">'products'</span><span style="color: #007700">][]&nbsp;=&nbsp;array(</span></span></code></div></div><br>
+	<p>и перед ним вставим:</p><br>
+	<div class="well"><div class="code"><code><span style="color: #000000">
+	<span style="color: #0000BB">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$cati&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">model_catalog_product</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">getProductCategories</span><span style="color: #007700">(</span><span style="color: #0000BB">$result</span><span style="color: #007700">[</span><span style="color: #DD0000">'product_id'</span><span style="color: #007700">]);<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">load</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">model</span><span style="color: #007700">(</span><span style="color: #DD0000">'catalog/category'</span><span style="color: #007700">);<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$caname&nbsp;</span><span style="color: #007700">=&nbsp;array();<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;foreach&nbsp;(</span><span style="color: #0000BB">$cati&nbsp;&nbsp;</span><span style="color: #007700">as&nbsp;</span><span style="color: #0000BB">$ca</span><span style="color: #007700">)&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$catis&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">model_catalog_category</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">getCategory</span><span style="color: #007700">(</span><span style="color: #0000BB">$ca</span><span style="color: #007700">);<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$caname</span><span style="color: #007700">[]&nbsp;=&nbsp;</span><span style="color: #0000BB">$catis</span><span style="color: #007700">[</span><span style="color: #DD0000">'name'</span><span style="color: #007700">];<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span></span></code></div></div><br>
+	<p>чуть ниже, после: </p><br>
+	<div class="well"><div class="code"><code><span style="color: #000000"><span style="color: #0000BB"></span><span style="color: #DD0000">'name'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">$result</span><span style="color: #007700">[</span><span style="color: #DD0000">'name'</span><span style="color: #007700">],</span></span></code></div></div><br>
+	<p>вставим:</p><br>
+	<div class="well"><div class="code"><code><span style="color: #000000"><span style="color: #0000BB"></span><span style="color: #DD0000">'caname'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">implode&nbsp;</span><span style="color: #007700">(</span><span style="color: #DD0000">"&lt;br&gt;&nbsp;"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$caname</span><span style="color: #007700">),&nbsp;</span></span></code></div></div><br>
+	<p>И в файле <b>\admin\view\template\catalog\<b>product_list.tpl</b><br><br>
+	перед:</p>
+	<div class="well"><pre>&lt;td class="text-left"&gt;&lt;?php if ($sort == 'p.model') { ?&gt;</pre></div><br>
+	<p>вставим:</p><br>
+	<div class="well"><pre>&lt;td class="text-left"&gt;Категория&lt;/td&gt;</pre></div><br>
+	<p>и перед:</p><br>
+	<div class="well"><pre> &lt;td class="text-left"&gt;&lt;?php echo $product['model']; ?&gt;&lt;/td&gt;</pre></div><br>
+	<p>вставим:</p><br>
+	<div class="well"><pre> &lt;td class="text-left"&gt;&lt;?php echo $product['caname']; ?&gt;&lt;/td&gt;</pre></div></article>
+	<article id="adm4">
+		
+	</article>
 	<h2>Запрос SQL на обновление товара</h2>
+	<p>Структура таблицы имеет вид:</p><br>
+	<pre>CREATE TABLE `product` (
+		`product_id` int(11) NOT NULL AUTO_INCREMENT,
+		`model` varchar(64) NOT NULL,
+		`country` varchar(255) NOT NULL,
+		`material` varchar(65) DEFAULT NULL,
+		`sku` varchar(64) NOT NULL,
+		`upc` varchar(12) NOT NULL,
+		`location` varchar(128) NOT NULL,
+		`quantity` int(4) NOT NULL DEFAULT '0',
+		`stock_status_id` int(11) NOT NULL,
+		`image` varchar(255) DEFAULT NULL,
+		`manufacturer_id` int(11) NOT NULL,
+		`shipping` tinyint(1) NOT NULL DEFAULT '1',
+		`price` decimal(15,4) NOT NULL DEFAULT '0.0000',
+		`points` int(8) NOT NULL DEFAULT '0',
+		`tax_class_id` int(11) NOT NULL,
+		`date_available` date NOT NULL,
+		`weight` decimal(7,2) NOT NULL DEFAULT '0.00',
+		`weight_class_id` int(11) NOT NULL DEFAULT '0',
+		`length` decimal(7,2) NOT NULL DEFAULT '0.00',
+		`width` decimal(7,2) NOT NULL DEFAULT '0.00',
+		`height` decimal(7,2) NOT NULL DEFAULT '0.00',
+		`length_class_id` int(11) NOT NULL DEFAULT '0',
+		`subtract` tinyint(1) NOT NULL DEFAULT '1',
+		`minimum` int(11) NOT NULL DEFAULT '1',
+		`sort_order` int(11) NOT NULL DEFAULT '0',
+		`status` tinyint(1) NOT NULL DEFAULT '0',
+		`date_added` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+		`date_modified` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+		`viewed` int(5) NOT NULL DEFAULT '0',
+		`youtube_code` text NOT NULL,
+		`files_code` text NOT NULL,
+		PRIMARY KEY (`product_id`)) ENGINE=MyISAM AUTO_INCREMENT=516 DEFAULT CHARSET=utf8;</pre>
+	<p>В ней нас интересует поле price. Именно в нем храниться значение цены товара. Нижу приведен SQL скрипт:</p>
+	<pre>UPDATE cms_product SET price ='0'</pre>
+	<p>При выполнении его в БД, мы обновляем поле price, присвоив ему значение 0.</p>
+	<p>Например, нам необходимо увеличить стоимость всего товара в интернет магазине на 10%:</p>
+	<pre>update `ava_product` set price=price + price*0,1</pre>
+	<p>Hовая цена равна, старая цена + полученный нужный процент от старой цены.</p>
+	<p>Таким же образом можно обновить цены у товаров, у которых определенные атрибуты или категории и т.д.</p>
 	<blockquote><p><b>UPDATE `product` SET `quantity`=N,`stock_status_id`=[7/8/5/6],`price`=N.NNNN,`subtract`=1?,`status`=1? WHERE `sku`=ARTICUL</b></p></blockquote>
 </section>
 </body>
