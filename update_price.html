@@ -29,8 +29,13 @@
 <section class="user content col-md-10 col-md-offset-1" id="top">
 	<header id="top">
 		<a href="index.html">&larr;&nbsp;Основной раздел</a>
+		<hr>
+		<a href="#edit">Редактирование прайс-листа</a>
+		<a href="#convert">Конвертирование прайс-листа в формат запроса .sql
+</a>
+		<a href="#send">Отправка полученного запроса .sql в базу данных</a>
 	</header>
-	<article id="">
+	<article id="edit">
 		<h1>Редактирование прайс-листа</h1>
 		<p>Необходимо удалить все данные из шапки таблицы. Так, чтобы заголовки колонок были в первой строке.</p>
 		<p>Далее, при помощи инструмента «Найти/Заменить» удалить приставку «грн» во всех ячейках с ценами. Так, чтобы остались только численные значения.</p>
@@ -41,7 +46,7 @@
 		<p>Когда все готово, экспортировать таблицу в формате .csv .</p>
 	</article>
 
-	<article id="">
+	<article id="convert">
 		<h1>Конвертирование прайс-листа в формат запроса .sql</h1>
 		<p>Переходи на сайт онлан-конвертера <a href="http://www.convertcsv.com/csv-to-sql.htm">www.convertcsv.com</a>.</p>
 		<p>Найди «<b>Step 1: Select your input</b> <br>Option 1 - Choose a CSV file» и загрузи отредактированный прайс лист в формате .csv в форму для загрузки файла.</p>
@@ -55,7 +60,7 @@
 		<hr>
 	</article>
 	
-	<article id="">
+	<article id="send">
 		<h1>Отправка полученного запроса .sql в базу данных&nbsp;&rarr;</h1>
 		<hr>
 		<p><a href="http://185.18.54.134/phpmyadmin/index.php?db=information_schema&target=db_structure.php&token=741187b6280378b0c0193f9f8800d5e4#PMAURL-3:tbl_sql.php?db=agrotoria&table=product&server=1&target=&token=741187b6280378b0c0193f9f8800d5e4" target="_blank">Выполнить SQL-запрос(ы) к базе данных agrotoria: таблица «product»</a></p>
