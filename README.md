@@ -1,2 +1,2 @@
 # oc_docs
-Documentation for open cart online store management
+Documentation for Opencart Online Store Management
