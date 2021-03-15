@@ -1,2 +1,3 @@
 # oc_docs
-Documentation for Opencart Online Store Management
+Russian Documentation for Opencart Online Store Management
+English Language Translation File included
