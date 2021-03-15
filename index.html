@@ -1,14 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
+<html lang=en-x-mtfrom-ru><meta name="google" content="notranslate"/>
+<head><script>(function(){/*
+
+ Copyright The Closure Library Authors.
+ SPDX-License-Identifier: Apache-2.0
+*/
+(function(){function e(g){this.t={};this.tick=function(h,k,f){this.t[h]=[void 0!=f?f:(new Date).getTime(),k];if(void 0==f)try{window.console.timeStamp("CSI/"+h)}catch(m){}};this.getStartTickTime=function(){return this.t.start[0]};this.tick("start",null,g)}var a;if(window.performance)var d=(a=window.performance.timing)&&a.responseStart;var l=0<d?new e(d):new e;window.jstiming={Timer:e,load:l};if(a){var b=a.navigationStart;0<b&&d>=b&&(window.jstiming.srt=d-b)}if(a){var c=window.jstiming.load;0<b&&d>=
+b&&(c.tick("_wtsrt",void 0,b),c.tick("wtsrt_","_wtsrt",d),c.tick("tbsd_","wtsrt_"))}try{a=null,window.chrome&&window.chrome.csi&&(a=Math.floor(window.chrome.csi().pageT),c&&0<b&&(c.tick("_tbnd",void 0,window.chrome.csi().startE),c.tick("tbnd_","_tbnd",b))),null==a&&window.gtbExternal&&(a=window.gtbExternal.pageT()),null==a&&window.external&&(a=window.external.pageT,c&&0<b&&(c.tick("_tbnd",void 0,window.external.startE),c.tick("tbnd_","_tbnd",b))),a&&(window.jstiming.pt=a)}catch(g){}})();}).call(window);
+</script><script src="https://translate.googleusercontent.com/translate/releases/twsfe_20210301_RC00/r/js/translate_c.js"></script><script>_intlStrings._originalText = "Originaltext auf Russisch";_intlStrings._interfaceDirection="ltr";_intlStrings._interfaceAlign="left";_intlStrings._langpair="ru|en";_intlStrings._feedbackUrl="https://translate.google.com/translate_suggestion";_intlStrings._currentBy="Aktuelle Übersetzung vom %1$s von %2$s";_intlStrings._unknown="unbekannt";_intlStrings._suggestTranslation="Bessere Übersetzung vorschlagen"  ;_intlStrings._submit="Vorschlagen";_intlStrings._suggestThanks="Vielen Dank für deinen Vorschlag zu Google Übersetzer.";_intlStrings._reverse=false;_intlStrings._staticContentPath="https://www.gstatic.com/translate/infowindow/";</script><style type="text/css">.google-src-text {display: none !important} .google-src-active-text {display: block!important;color:black!important; font-size:12px!important;font-family:arial,sans-serif!important}.google-src-active-text a {font-size:12px!important}.google-src-active-text a:link {color:#00c!important;text-decoration:underline!important}.google-src-active-text a:visited {color:purple!important;text-decoration:underline!important}.google-src-active-text a:active {color:red!important;text-decoration:underline!important}</style><meta http-equiv="X-Translated-By" content="Google"><link href=index.html.txt hreflang=ru rel="alternate machine-translated-from"><link href=http://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Google+Sans:400,500 rel=stylesheet type=text/css><base href="" target=_top />
+	<meta charset=UTF-8>
 	<title>Документация к админке</title>
 	<!-- Latest compiled and minified CSS -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css integrity=sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u crossorigin=anonymous>
 	<!-- Optional theme -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+	<link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css integrity=sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp crossorigin=anonymous>
 	<!-- Latest compiled and minified JavaScript -->
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	<script src=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js integrity=sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa crossorigin=anonymous></script>
 </head>
 <style>
 body, html {
@@ -21,36 +28,70 @@ body, html {
 }
 </style>
 <body>
+        <style>
+          .spinner-container {
+            width:25%;
+            top:20px;
+            left:50%;
+            margin-left:-12.5%;
+            border-radius:8px;
+            position:fixed;
+            text-align:center;
+            box-shadow:0 0 10px rgba(0,0,0,0.24);
+            background:#fff;
+            overflow:hidden;
+          }
 
-<header id="top">
+          .spinner-container p{
+            font-family:'Roboto', Arial, sans-serif;
+            color:rgba(0,0,0,0.87);
+            margin:12px 0 16px 0;
+            padding:0;
+            font-size:12px;
+          }
+
+          .spinner-container img{
+            width:22px;
+            height:22px;
+            margin:16px 0 0;
+            padding:0;
+          }
+        </style>
+        <div class="spinner-container notranslate" id="gt-dt-spinner">
+         <img src="https://www.gstatic.com/translate/progress_spinner_color_20dp@2x.gif">
+         <p>Wird übersetzt...</p>
+        </div>
+      <iframe src="https://translate.google.com/translate_un?hl=de&prev=_t&sl=ru&tl=en&lang=ru&usg=ALkJrhhWS95g7CKEad0p7VPG_9wJDDDCmQ" width=0 height=0 frameborder=0 style="width:0px;height:0px;border:0px;display:none;"></iframe>
+
+<header id=top>
 	
 </header>
 
 <section class="index-list col-md-3">
-	<ol><li><a href="#userinfo" class="internalLink"><b>Руководство Пользователя</b></a>
-		<ul><li><a href="#start" class="internalLink">1.1 Начало работы</a></li><ul>
-			<li><a href="#settings" class="internalLink">Настройка системы</a></li>
-			<li><a href="#pay" class="internalLink">Способы оплаты</a></li>
-			<li><a href="#delivery" class="internalLink">Способы доставки</a></li>
-			<li><a href="#percents" class="internalLink">Налоги</a></li>
-			<li><a href="#banners" class="internalLink">Управление баннерами</a></li>
-			<li><a href="#mod" class="internalLink">Модификаторы</a></li>
-			<li><a href="#more" class="internalLink">Дополнения, Модули и Темы</a></li>
+	<ol><li><a href=#userinfo class=internalLink><b>Руководство Пользователя</b></a>
+		<ul><li><a href=#start class=internalLink>1.1 Начало работы</a></li><ul>
+			<li><a href=#settings class=internalLink>Настройка системы</a></li>
+			<li><a href=#pay class=internalLink>Способы оплаты</a></li>
+			<li><a href=#delivery class=internalLink>Способы доставки</a></li>
+			<li><a href=#percents class=internalLink>Налоги</a></li>
+			<li><a href=#banners class=internalLink>Управление баннерами</a></li>
+			<li><a href=#mod class=internalLink>Модификаторы</a></li>
+			<li><a href=#more class=internalLink>Дополнения, Модули и Темы</a></li>
 		</ul>
 		<!-- <li><a href="http://forum.Магазин-russia.ru/threads/vitrina.403/" class="internalLink">Витрина</a></li> -->
 		<!-- <li><a href="http://forum.Магазин-russia.ru/threads/panel-administratora.410/" class="internalLink">Панель Администратора</a></li> -->
-		<li><a href="#product" class="internalLink">1.2 Добавление товара</a></li>
-		<li><a href="#category" class="internalLink">1.3 Создание категорий</a></li>
-		<li><a href="#attr" class="internalLink">1.4 Атрибуты и группы атрибутов</a></li>
-		<li><a href="#option" class="internalLink">1.5 Создание опций</a></li>
-		<li><a href="#filter" class="internalLink">1.6 Добавление фильтров</a></li>
-		<li><a href="#manufactur" class="internalLink">1.7 Добавление Производителей</a></li>
-		<li><a href="#information" class="internalLink">1.8 Создание информационных статей</a></li>
-		<li><a href="#file" class="internalLink">1.9 Файлы для скачивания</a></li>
+		<li><a href=#product class=internalLink>1.2 Добавление товара</a></li>
+		<li><a href=#category class=internalLink>1.3 Создание категорий</a></li>
+		<li><a href=#attr class=internalLink>1.4 Атрибуты и группы атрибутов</a></li>
+		<li><a href=#option class=internalLink>1.5 Создание опций</a></li>
+		<li><a href=#filter class=internalLink>1.6 Добавление фильтров</a></li>
+		<li><a href=#manufactur class=internalLink>1.7 Добавление Производителей</a></li>
+		<li><a href=#information class=internalLink>1.8 Создание информационных статей</a></li>
+		<li><a href=#file class=internalLink>1.9 Файлы для скачивания</a></li>
 		<!--<li><a href="http://forum.Магазин-russia.ru/threads/otzyvy.132/" class="internalLink">Отзывы</a></li>
 		<li><a href="http://forum.Магазин-russia.ru/threads/nastrojka-modulej.67/" class="internalLink">Настройка модулей</a></li>-->
-		<li><a href="#delivery" class="internalLink">1.10 Настройка доставки</a></li>
-		<li><a href="#payment" class="internalLink">1.11 Настройка оплаты</a></li>
+		<li><a href=#delivery class=internalLink>1.10 Настройка доставки</a></li>
+		<li><a href=#payment class=internalLink>1.11 Настройка оплаты</a></li>
 		<!--<li><a href="http://forum.Магазин-russia.ru/threads/uchityvat-v-zakaze.203/" class="internalLink">Учитывать в заказе</a></li>
 		<li><a href="http://forum.Магазин-russia.ru/threads/zaschita-ot-robotov-captcha.1666/" class="internalLink">Защита от роботов (captcha)</a></li>
 		<li><a href="http://forum.Магазин-russia.ru/threads/klienty-i-gruppa-klientov.230/" class="internalLink">Клиенты и группа клиентов</a></li>
@@ -58,7 +99,7 @@ body, html {
 		<li><a href="http://forum.Магазин-russia.ru/threads/podarochnye-sertifikaty.236/" class="internalLink">Подарочные сертификаты</a></li>
 		<li><a href="http://forum.Магазин-russia.ru/threads/partnerskaja-programma.254/" class="internalLink">Партнерская программа</a></li>
 		<li><a href="http://forum.Магазин-russia.ru/threads/polzovateli-i-gruppy-polzovatelej.350/" class="internalLink">Пользователи и группы пользователей</a></li>-->
-		<li><a href="#ability" class="internalLink">1.12 Состояние на складе, статус заказа</a></li>
+		<li><a href=#ability class=internalLink>1.12 Состояние на складе, статус заказа</a></li>
 		<!--<li><a href="http://forum.Магазин-russia.ru/threads/rassylka-informacii-klientam.279/" class="internalLink">Рассылка информации клиентам</a></li>
 		<li><a href="http://forum.Магазин-russia.ru/threads/dobavlenie-dopolnitelnogo-jazyka.17/" class="internalLink">Добавление дополнительного языка</a></li>
 		<li><a href="http://forum.Магазин-russia.ru/threads/dobavleniju-dopolnitelnoj-valjuty.18/" class="internalLink">Добавление дополнительной валюты</a></li>
@@ -68,30 +109,30 @@ body, html {
 		<li>​<a href="http://forum.Магазин-russia.ru/threads/rukovodstvo-administratora.453/" class="internalLink"><b>6. Руководство Администратора</b></a></li>
 		<li><a href="http://forum.Магазин-russia.ru/threads/rukovodstvo-razrabotchika.14/" class="internalLink"><b>7. Руководство Разработчика</b></a></li>
 		<li><a href="http://forum.Магазин-russia.ru/threads/rukovodstvo-dizajnera.16/" class="internalLink"><b>8. Руководство Дизайнера</b></a></li> -->
-	<li><a href="#devinfo" class="internalLink"><b>Руководство Разработчика</b></a>
+	<li><a href=#devinfo class=internalLink><b>Руководство Разработчика</b></a>
 		<ul>
 			<!-- <li><a href="#intro" class="internalLink"><b>Введение</b></a></li>
 			<li><a href="#init" class="internalLink"><b>2.1 Установка</b></a></li>-->
-			<li><a href="#update" class="internalLink">2.2 Обновление</a></li>
+			<li><a href=#update class=internalLink>2.2 Обновление</a></li>
 			<!-- <li><a href="#" class="internalLink">2.2 </a></li> -->
 		</ul>
 	</li>
 </ol>
 </section>
-<section class="user content col-md-9 pull-right" id="top">
-	<article id="userinfo">
+<section class="user content col-md-9 pull-right" id=top>
+	<article id=userinfo>
 	<h1>Руководство Пользователя</h1>
-	<h2 id="start">Начало работы</h2>
+	<h2 id=start>Начало работы</h2>
 	<p>После установки Магазин, необходимо произвести некоторые настройки перед началом торговли в интернет-магазине. Магазин Магазин состоит из интерфейса Витрины (FrontEnd) и Панели администратора (BackEnd). В данном разделе, Мы рассмотрим настройки интерфейса панели администратора. Необходимо помнить, что перед запуском Вашего магазина, установленные новые параметры необходимо тщательно проверять на витрине. Шаги, указанные ниже, помогут вам настроить работу вашего интернет-магазина сразу после установки.</p>
 	<p>Данное руководство предполагает наличие данных администратора для входа в панель управления магазина через <b>www.domain.com/admin</b></p>
 	<h3>Быстрые ссылки раздела:</h3>
-	<a href="#settings" class="internalLink">1. Настройка системы</a><br>
-	<a href="#pay" class="internalLink">2. Способы оплаты</a><br>
-	<a href="#delivery" class="internalLink">3. Способы доставки</a><br>
-	<a href="#percents" class="internalLink">4. Налоги</a><br>
-	<a href="#banners" class="internalLink">5. Управление баннерами</a><br>
-	<a href="#mod" class="internalLink">6. Модификаторы</a><br>
-	<a href="#more" class="internalLink">7. Дополнения, Модули и Темы</a>
+	<a href=#settings class=internalLink>1. Настройка системы</a><br>
+	<a href=#pay class=internalLink>2. Способы оплаты</a><br>
+	<a href=#delivery class=internalLink>3. Способы доставки</a><br>
+	<a href=#percents class=internalLink>4. Налоги</a><br>
+	<a href=#banners class=internalLink>5. Управление баннерами</a><br>
+	<a href=#mod class=internalLink>6. Модификаторы</a><br>
+	<a href=#more class=internalLink>7. Дополнения, Модули и Темы</a>
 	</article>
 	<!-- <article id="settings"><h3>1. Настройка системы</h3>
 	<p>Самое первое что необходимо сделать перед началом работы с магазином, это правильно его настроить. Перед настройкой вам необходимо подготовить сведения о вашем магазине, такие как Название магазина, его описание, адрес, логотип итд.</p>
@@ -121,7 +162,7 @@ body, html {
 	На данной вкладке ничего трогать не нужно без необходимости. С настройками по умолчанию 90% магазинов отправляют письма.<br>
 	<b>Сервер</b><br>
 	На данной последней вкладке уже все настроено, но возможно вам понадобятся данные пункты: Включить ЧПУ, Показывать ошибки, Режим обслуживания</p></article>	 -->
-	<article id="settings"><h3>1. Настройка системы</h3>
+	<article id=settings><h3>1. Настройка системы</h3>
 	<p>Самое первое что необходимо сделать перед началом работы с магазином, это правильно его настроить. Перед настройкой вам необходимо подготовить сведения о вашем магазине, такие как Название магазина, его описание, адрес, логотип итд.<br>
 	Данное руководство поможет вам настроить основные параметры магазина.<br>
 	<i>Начнем.</i></p>
@@ -149,7 +190,7 @@ body, html {
 	На данной вкладке ничего трогать не нужно без необходимости. С настройками по умолчанию 90% магазинов отправляют письма.<br>
 	<b>Сервер</b><br>
 	На данной последней вкладке уже все настроено, но возможно вам понадобятся данные пункты: <b>Включить ЧПУ, Показывать ошибки, Режим обслуживания</b></p></article>			
-	<article id="pay"><h3>2. Способы оплаты</h3>
+	<article id=pay><h3>2. Способы оплаты</h3>
 	<p>Магазин поддерживает множество способов оплаты (платежный шлюз). Если необходимый способ оплаты не был найден вами в списке модулей, то его можно найти в магазине дополнений или на форуме.<br>
 	Активировать и изменить настройки способов оплаты, вы можете в <b><i>Меню &gt; Модули &gt; Оплата</i></b><br>
 	Здесь вы найдете все доступные способы оплаты.<br>
@@ -158,7 +199,7 @@ body, html {
 	Далее в настройках модуля необходимо изменить поле <b>Статус</b> на <i><b>Включено</b></i>. Тем самым вы включите настройки модуля.</p>
 	<p>После внесения изменений не забываем нажать на кнопку <i><b>Сохранить</b></i>.</p>
 	</article>	
-	<article id="delivery"><h3>3. Способы доставки</h3>
+	<article id=delivery><h3>3. Способы доставки</h3>
 	<p>Магазин поддерживает множество способов доставки.<br>
 	Если необходимый способ доставки не был найден вами в списке модулей, то его можно найти в магазине дополнений или на форуме.</p>
 	<p>Активировать и изменить настройки способов оплаты, вы можете в <b><i>Меню &gt; Модули &gt; Доставка</i></b><br>
@@ -168,7 +209,7 @@ body, html {
 	Далее в настройках модуля необходимо изменить поле <b>Статус</b> на <b>Включено</b>. Тем самым вы включите настройки модуля.</p>
 	</p>После внесения изменений не забываем нажать на кнопку <i><b>Сохранить</b></i>.</p>	
 	</article>	
-	<article id="percents"><h3>4. Налоги</h3>
+	<article id=percents><h3>4. Налоги</h3>
 	<p>* Если вы не собираетесь использовать налоги, то можете оставить все как есть, т.к по умолчанию в сборке использование налогов отключено.</p>
 	<p>В Магазин возможно создать неограниченное кол-во способов налогообложения.<br>
 	Сам налог (налоговая ставка) зависит напрямую от местонахождения владельца или покупателя. А так же от того, какой товар покупает клиент.<br>
@@ -184,23 +225,23 @@ body, html {
 	<p><b><i>Меню</i> - Система - Локализация - Налоги - Налоговые классы</i></b><p>
 	<p>Там вы можете добавить неограниченное количество налоговых ставок и задать, на основании какого адреса какой налог будет использоваться.</p>	
 	</article>
-	<article id="banners"><h3>5. Управление баннерами</h3>
+	<article id=banners><h3>5. Управление баннерами</h3>
 	<p>В Магазин баннер это группа изображений состоящая из одного или нескольких изображений.<br>
 	Баннеры в Магазин вы можете увидеть повсюду, например, на главной страницы Слайдшоу или в нижней части Карусель логотипов производителей.</p>
 	<p>Для того чтобы создать группу баннеров вам необходимо перейти в раздел <b>Баннеры</b></p>
 	<p><b>Меню - Дизайн - Баннеры</b></p>
 	<p>Далее вы можете изменить существующую группу или создать новую.</p></article>		
-	<article id="mod"><h3>6. Модификаторы</h3>
+	<article id=mod><h3>6. Модификаторы</h3>
 	Модификаторы - специальные файлы xml в которых есть инструкции по изменению файлов. Но сами файлы не меняются, меняются их виртуальные копии. Более подробно описано в руководстве разработчика</a>.</p>
 	<p>Но для начала совсем не об этом. Бывают случаи когда вы то и дело изменяете основные файлы, а изменения не происходят. Скорей всего, виной является как раз виртуальная копия файла (созданная каким либо модификатором), которая находится по пути <b>ваш-сайт\system\modification\</b> или в <b>Меню - Модули - Модификаторы</b></p>
 	<p>Для того чтобы обновить кеш модификатора, необходимо перейти в <b>Меню - Модули<b> -</b> Модификаторы </b>нажать <b>Обновить</b></p></article>
-	<article id="more"><h3>7. Дополнения, Модули и Темы</h3>
+	<article id=more><h3>7. Дополнения, Модули и Темы</h3>
 	<h4>ВНИМАНИЕ! О ВАРЕЗЕ! </h4>
 	<p>Никогда не скачивайте модули и темы с так называемых ВАРЕЗ сайтов или не покупайте в складчину.<br>
 	На первый взгляд, ничего особенного, просто кто то захотел поделиться. <br>
 	А на самом деле, вы можете стать жертвой мошенничества (сайт станет вдруг работать медленнее, появятся ненужные ссылки и банеры, пропадет доступ к сайту, клиентские данные буду скачиваться, и самое обидное, может вестись запись всех действий магазина, особенно данных оплаты. <br>
 	Т.е если вы принимаете деньги автоматически на платежный агрегатор, то готовьтесь - они могут пропасть)</p></article>
-	<article id="product"><h2>Добавление товара</h2>
+	<article id=product><h2>Добавление товара</h2>
 	<p>Для того чтобы добавить товар, необходимо перейти в <b>Меню - Каталог - Товары</b> и нажать кнопку <b>Добавить</b></p>
 	<p>Далее мы увидим форму с множеством вкладок.<br>
 	Каждую вкладку опишем ниже, а для того чтобы товар возможно было сохранить, необходимо заполнить обязательные поля такие как: </p>
@@ -221,7 +262,7 @@ body, html {
 	<b>Изображения </b>- здесь можно добавить для товара дополнительные изображения.<br>
 	<b>Бонусы </b>- на данной вкладке задается стоимость товара в бонусных баллах, а так же количесво баллов которые будут начислены покупателю при покупки товара.<br>
 	<b>Дизайн </b>- на дангой вкладке можно задать макет для товара. В 99% случаев оставляют не заполненным.</p></article>
-	<article id="category"><h2>Создание категорий</h2>
+	<article id=category><h2>Создание категорий</h2>
 	<p>Для создании категории или подкатегории необходимо выполнить следующие действия.<br>
 	<b>1</b>. Перейти в <b>Меню - Каталог - Категории</b> -  и нажать <b>Добавить</b></p>
 	<p><b>2.</b>Заполнить все необходимые поля и выбрать необходимые настройки<br>
@@ -231,7 +272,7 @@ body, html {
 	<h4>Внимание!</h4>
 	<p>Как только вы начнете вводить название категории, сработает автозаполнение, далее просто можно выбрать категорию мышкой.<br>
 	<b>Категория в Главном меню</b> - для того чтобы категория показывалась в главном меню, необходимо на закладке <b>Данные </b>выбрать крыжик поля <b>Главное меню</b></p></article>
-	<article id="attr"><h2>Атрибуты и группы атрибутов​</h2>
+	<article id=attr><h2>Атрибуты и группы атрибутов​</h2>
 	<p>Атрибут товара это часть характеристик. <br>
 	Например у товара Телефон есть атрибуты, такие как, Размер экрана, Тип батареи итд и его значения 320*480 и Li-ion</p>
 	<p><b>Группа атрибутов</b> - группа характеристик, например можно разделить на группы <b>Характеристики, Комплектность</b> и тд</p><br>
@@ -244,7 +285,7 @@ body, html {
 	<p>3.1. Нажимаем <b>Редактировать</b> и на вкладке <b>Атрибуты</b> добавляем наши атрибуты и вводим им значения</p>
 	Для того чтобы выбрать нужный атрибут, в поле атрибут начинаем вводить его название. </p>
 	<p>4. Нажимаем <b>Сохранить</b>. Видим результат на витрине.</p></article>
-	<article id="option"><h2>Создание опций​</h2>
+	<article id=option><h2>Создание опций​</h2>
 	<p>Опции это некий вид дополнительного товара, услуги или предоставлении выбора покупателю , например, размера товара, цвет итд.</p><br>
 	<p>Для создании опции необходимо выполнить следующие действия:</p>
 	<p>1. Создать группу атрибутов. <b>Меню - Каталог - Опции</b>
@@ -256,7 +297,7 @@ body, html {
 	<p>3.1. Выбираем вкладку <b>Опции</b> и заполняем данными</p>
 	Для того чтобы выбрать нужную опцию, в поле <b>Опции</b> начинаем вводить его название.</p>
 	<p>4. Нажимаем <b>Сохранить</b> и проверяем результат на витрине.</p></article>
-	<article id="filter"><h2>Добавление фильтров товара</h2>
+	<article id=filter><h2>Добавление фильтров товара</h2>
 	<p>1. Включаем модуль фильтра в Модулях. Для этого переходим в раздел модули <b>Меню - Модули - Модули</b> и активируем, включаем модуль <b>Фильтр</b>.</p>
 	<p>2. В макетах добавляем модуль на макет категорий ()</p>
 	<p>3.Создаем группу фильтров и фильтры. <b>Меню - Каталог - Фильтры</b>, добавляем группу фильтров и сами фильтры.</p>
@@ -267,13 +308,13 @@ body, html {
 	<p>6. После данных манипуляций мы сможем увидеть результат работы.</p>
 	<blockquote><p>Обратите внимание, что фильтр работает только в категориях.<br>
 	Для поиска из страниц товаров или производителей, а тем более главной страницы, штатный модуль не предназначен и работать не будет.</p></blockquote></article>
-	<article id="manufactur"><h2>Добавление Производителей​</h2>
+	<article id=manufactur><h2>Добавление Производителей​</h2>
 	<p>Для добавления производителя необходимо выполнить ниже указанные действия.</p>
 	<p>1. Переходим в <b>Меню - Каталог - Производители</b> и нажимаем <b>Добавить</b></p>
 	<p>2. Далее заполняем поля, такие как <b>Название</b> и при необходимости <b>SEO URL, Изображение и порядок сортировки</b>.</p>
 	<p>3. Результат мы можем увидеть в списке производителей (по пути <b>http://ваш-сайт.ру/index.php?route=product/manufacturer</b>), а так же при добавлении товара в списке выбора производителя.</p>
 	<p>4. Далее назначаем производителя, товару. Для этого открываем нужный товар и на вкладке <b>Связи</b>, заполняем поле <b>Производители</b></p></article>
-	<article id="information"><h2>Создание информационных статей​</h2>
+	<article id=information><h2>Создание информационных статей​</h2>
 	<p>Для создания информационной статьи необходимо перейти в пункт меню
 	<b>Меню</b> - <b>Каталог</b> - <b>Статьи</b> и нажать <b>Добавить</b></p>
 	<p>Далее заполняем обязательные поля, такие как, <b>Название статьи</b>, <b>Описание</b> и <b>Мета-тег Title</b>. </p>
@@ -290,7 +331,7 @@ body, html {
 	<b>http://ваш-сайт.ру/index.php?route=information/information&information_id=4</b> , где 4 это id статьи.</p>
 	<p>Для того чтобы узнать id статьи, достаточно посмотреть на окончание ссылки.</p>
 	<p>Ссылку видно в браузере при редактировании статьи.</p></article>
-	<article id="file"><h2>Файлы для скачивания​</h2>
+	<article id=file><h2>Файлы для скачивания​</h2>
 	<p>Файлы для скачивания (или цифровой товар) это такие файлы, которые доступны после покупки товара.</p>
 	<p>Данные файлы будут доступны в личном кабинете покупателя в том случаи, если заказ перешел в статус "Завершено".</p>
 	<p>Для добавления Файлов для скачивания, сначала необходимо их добавить, а только потом их назначить товару.</p>
@@ -298,7 +339,7 @@ body, html {
 	<p>2. В открывшемся окне заполняем поле <b>Название</b> и загружаем файл.</p>
 	<p>3. После того как вы добавили все необходимые файлы, вы можете назначить файлы товару. </p>
 	<p>Для этого открываем нужный товар и на вкладке <b>Связи</b>, заполняем поле <b>Загрузки</b></p></article>
-	<article id="delivery"><h2>Настройка доставки​</h2>
+	<article id=delivery><h2>Настройка доставки​</h2>
 	<p>Для настройки доставки необходимо перейти в <b>Меню</b> - <b>Модули</b> - <b>Доставка</b>, далее в модуле нажимаем <b>Активировать</b> или <b>Редактировать</b></p>
 	<p>В появившемся окне редактирования, производим настройки.</p>
 	<p>Если модуль доставки только Активировали, не забываем поменять статус на <b>Включено</b></p>
@@ -315,7 +356,7 @@ body, html {
 	<p><b>Доставка с оплатой за единицу</b> - стоимость зависит от кол-ва товара</p>
 	<p><b>Самовывоз</b> - способ доставки для самовывоза</p>
 	<p><b>Доставка в зависимости от веса</b> - в отличие от метода "Доставка по городу" имеется возможность распределить стоимость и вес для разных Географических зон</p></article>
-	<article id="payment"><h2>Настройка оплаты</h2>
+	<article id=payment><h2>Настройка оплаты</h2>
 	<p>По умолчанию в Магазин присутствуют несколько способов оплаты, которые покрывают необходимость владельца магазина на 90%.<br>
 	Для настройки методом оплаты, необходимо перейти в <b>Меню - Модули - Оплата</b> и нажать <b>Редактировать </b>(при необходимости сначала Активировать)<br>
 	<b>Настройка</b><br>
@@ -330,7 +371,7 @@ body, html {
 	<b>PayPal Экспресс-платежи</b> - метод оплаты картами Visa и MasterCard в процессинге PayPal<br>
 	<b>PayPal Pro</b> - метод оплаты картами Visa и MasterCard в процессинге PayPal<br>
 	<b>PayPal Payments Standard</b> - метод оплаты картами Visa и MasterCard в процессинге PayPal</p></article>
-	<article id="ability"><h2>Состояние на складе, статус заказа​</h2>
+	<article id=ability><h2>Состояние на складе, статус заказа​</h2>
 	<b>Состояние на складе</b><br>
 	<b>Состояний на складе</b> - это статус для товара, который применяется при его отсутствии на складе. Какой именно статус будет применяться к товару, вы можете самостоятельно выбрать на вкладке <b>редактирования товара</b>, поле <b>Отсутствие на складе</b>.<br>
 	Для того чтобы добавить новое состояние склада, вам необходимо перейти в <b>Меню - Система - Локализация - Состояние на складе</b> и нажать <b>Добавить</b>. Далее ввести название состояния и нажать сохранить.</p>
@@ -339,13 +380,13 @@ body, html {
 	При оформлении заказа с использование модулей оплаты, данный статус в настройках модуля тоже можно выбрать.<br>
 	Для добавления новых статусов заказа, необходимо его добавить в <b>Меню - Система - Локализация - Статус заказа</b></article>
 	<!-- <article id=""></article> -->
-	<b><a href="#top">&uarr;&nbsp;назад к Содержанию</a></b></article>
+	<b><a href=#top>&uarr;&nbsp;назад к Содержанию</a></b></article>
 </section>
-<br/><hr><br/>
+<br /><hr><br />
 <section class="dev user content col-md-9 pull-right">
-	<article id="devinfo">
+	<article id=devinfo>
 	<h1>Руководство Разработчика</h1>
-	<h2 id="update">Обновление</h2>
+	<h2 id=update>Обновление</h2>
 	<p>Инструкция ниже, предназначена для обновления магазина с одной версии на другую, например с 2.0.1.0 на 2.3.2.0</p>
 	<p>Для обновления с версии исправлений rs на следующую версию rs в пределах одной версии движка (например с 2.0.1.1 rs3 на 2.0.1.1 rs4), достаточно просто обновить файлы которые указаны в истории изменений. Или скопировать в корень сайта архив с измененными файлами, если таковой имеется (обычно он называется update-rs-to-rs).</p>
 	<p>Во многих случаях, простое обновление файлов, тоже рекомендовано для обновлении с версии на версию, но об этом предварительно читайте в теме соответствующей версии.</p>
@@ -373,4 +414,18 @@ body, html {
 	О таких корректировках будет написано в теме соответствующего релиза.</p></article>
 </section>
 </body>
-</html>
+<script>_addload(function(){_setupIW('com');_csi('ru','en','index.html.txt');});</script>
+            <script>
+              function gtElInit() {
+                var lib = new google.translate.TranslateService();
+                lib.setCheckVisibility(false);
+                lib.translatePage('ru', 'en', function (progress, done, error) {
+                  if (progress == 100 || done || error) {
+                    document.getElementById("gt-dt-spinner").style.display = "none";
+                  }
+                });
+              }
+            </script>
+            <script src="https://translate.google.com/translate_a/element.js?aus=0&cb=gtElInit&client=wt">
+            </script>
+          </html>
